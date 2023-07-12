@@ -757,14 +757,14 @@ impl InodeData {
         let mut offset = offset as usize;
         let count=count as usize;
         let count = min(count as usize + offset as usize,self.dinode.size as usize) - offset as usize;
-        info!("count is {}",count);
+        //info!("count is {}",count);
         //return Ok(10);
         let mut block_basic = offset / BSIZE;
         let mut block_offset = offset % BSIZE;
         while total < count as usize {
             let surplus_len = count - total;
             let block_no = self.bmap(block_basic as u32, false)?;
-            debug!("read block no is {},offset is {}",block_no,offset);
+            //debug!("read block no is {},offset is {}",block_no,offset);
             let buf = BLOCK_CACHE_MANAGER.bread(self.dev, block_no);
             let write_len = min(surplus_len, BSIZE - block_offset);
             // if copy_from_kernel(
@@ -869,13 +869,13 @@ impl InodeData {
             if dir_entry.inum == 0 {
                 continue;
             }
-            info!("dir_entry_name: {}, name: {}, inum: {}", String::from_utf8(dir_entry.name.to_vec()).unwrap(), String::from_utf8(name.to_vec()).unwrap(),dir_entry.inum);
+            //info!("dir_entry_name: {}, name: {}, inum: {}", String::from_utf8(dir_entry.name.to_vec()).unwrap(), String::from_utf8(name.to_vec()).unwrap(),dir_entry.inum);
             for i in 0..DIRSIZ {
                 if dir_entry.name[i] != name[i] {
                     break;
                 }
                 if dir_entry.name[i] == 0 {
-                    info!("find you!");
+                    //info!("find you!");
                     return Some(ICACHE.get(self.dev, dir_entry.inum as u32))
                 }
             }
