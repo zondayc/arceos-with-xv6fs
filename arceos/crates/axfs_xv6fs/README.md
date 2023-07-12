@@ -24,3 +24,6 @@ axxv6fs负责在arceos中进行文件系统的初始化
 xv6fs中提供给arceos的接口都在file.rs中，file.rs会调用下层的一系列功能
 xv6fs-fuse是单独对文件系统的简单测试
 xv6mkfs是生成文件系统磁盘镜像的相关代码
+
+## PS
+disk.img的生成在xv6mkfs中cargo run即可生成对应的disk.img，随后移动到arceos目录下即可。
