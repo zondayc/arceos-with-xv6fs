@@ -1,0 +1,19 @@
+[package]
+name = "arceos-hellofs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = []
+use_xv6fs = ["axfs/xv6fs","dep:axfs_vfs","dep:axfs_xv6fs"]
+sched_fifo = ["libax/sched_fifo"]
+
+[dependencies]
+axfs = { path = "../../../modules/axfs", optional = true }
+axfs_vfs = { path = "../../../crates/axfs_vfs", optional = true }
+axfs_ramfs = { path = "../../../crates/axfs_ramfs", optional = true }
+axfs_xv6fs = { path = "../../../crates/axfs_xv6fs", optional = true }
+crate_interface = { path = "../../../crates/crate_interface", optional = true }
+libax = { path = "../../../ulib/libax", features = ["fs","alloc","paging","multitask"] }

@@ -1,0 +1,18 @@
+[package]
+name = "axfs_xv6fs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Yicheng Zhang"]
+description = "Xv6 filesystem interfaces used by ArceOS"
+license = "GPL-3.0-or-later OR Apache-2.0"
+
+[features]
+default = []
+
+[dependencies]
+xv6fs = { path = "../../../xv6fs" }
+axfs_vfs = { path = "../axfs_vfs" }
+spin = "0.9"
+log = "0.4"
+axlog={path="../../modules/axlog"}
+axerrno = { path = "../../crates/axerrno" }
