@@ -2,12 +2,18 @@
 
 ## 添加&修改内容
 
-arceos/crates/axfs_xv6fs/* \\
-arceos/modules/axfs/src/sleeplock_shim.rs \\
-arceos/modules/axfs/src/root.rs \\
-arceos/modules/axfs/src/fs/axxv6fs.rs \\
-arceos/modules/axfs/src/Cargo.toml \\
-arceos/apps/fs/hellofs \\
+arceos/crates/axfs_xv6fs/* 
+
+arceos/modules/axfs/src/sleeplock_shim.rs 
+
+arceos/modules/axfs/src/root.rs 
+
+arceos/modules/axfs/src/fs/axxv6fs.rs 
+
+arceos/modules/axfs/src/Cargo.toml 
+
+arceos/apps/fs/hellofs 
+
 xv6fs/*
 
 ## 支持功能
